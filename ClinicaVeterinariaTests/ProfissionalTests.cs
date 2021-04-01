@@ -3,19 +3,20 @@ using ClinicaVeterinaria;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace ClinicaVeterinaria.Tests
 {
     [TestClass()]
     public class ProfissionalTests
     {
-       /* [TestMethod()]
-        public void printProfissionalTest()
+        [TestMethod()]
+        public void addServicoTest()
         {
-            Clinica clinica = new Clinica("clinica do jortge");
-            Profissional profissional = new Profissional("jorge", "2as10");
-            clinica.addProfissional(profissional);
-            Assert.AreEqual("jorge", profissional.printProfissional(), "wrong pro");
-        }*/
+            Profissional drGervasio = new Profissional("gervasio", "10as16");
+            Servico servico1 = new Servico("tratamento x", "2 dias", "antibioticos", "10€", drGervasio);
+            drGervasio.addServico(servico1);
+            Assert.AreEqual(servico1, drGervasio.servicos[0], "wrong datas");
+        }
     }
 }

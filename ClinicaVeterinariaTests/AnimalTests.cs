@@ -9,11 +9,14 @@ namespace ClinicaVeterinaria.Tests
     [TestClass()]
     public class AnimalTests
     {
-        /*[TestMethod()]
-        public void printAnimalTest()
+        [TestMethod()]
+        public void addServicoTest()
         {
-            Animal animal = new Animal("1", "2", "3","4","5");
-            Assert.AreEqual("1", animal.printAnimal(), "wrong user");
-        }*/
+            Profissional drGervasio = new Profissional("gervasio", "10as16");
+            Servico servico1 = new Servico("tratamento x", "2 dias", "antibioticos", "10€", drGervasio);
+            Animal boby = new Animal("boby","10","f","canino","0");
+            boby.addServico(servico1);
+            Assert.AreEqual(servico1, boby.servicos[0], "wrong datas");
+        }
     }
 }

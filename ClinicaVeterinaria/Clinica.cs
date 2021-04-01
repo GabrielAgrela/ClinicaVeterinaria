@@ -35,24 +35,6 @@ namespace ClinicaVeterinaria
             clientes.Add(cliente);
         }
 
-        public string returnClientes()
-        {
-            foreach (Cliente c in clientes)
-            {
-                return c.Nome;
-            }
-            return "not found any";
-        }
-
-        public Profissional searchProfissional(Profissional profissional)
-        {
-            foreach (Profissional p in profissionais)
-            {
-                return p;
-            }
-            return profissional;
-        }
-
         public string produzirRelatorio(Cliente cliente)
         {
             string relatorio = "";
@@ -73,21 +55,5 @@ namespace ClinicaVeterinaria
             }
             return relatorio;
         }
-
-
-
-
-        /* public Profissional searchProfissional(Profissional profissional)
-         {
-             foreach (Profissional p in profissionais)
-             {
-                 if (profissional.nome == p.nome)
-                 {
-                     return p;
-                 }
-             }
-             return profissional;
-         }*/
-
     }
 }

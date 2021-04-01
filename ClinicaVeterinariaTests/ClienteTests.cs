@@ -9,26 +9,13 @@ namespace ClinicaVeterinaria.Tests
     [TestClass()]
     public class ClienteTests
     {
-        /*[TestMethod()]
-        public void printClienteTest()
-        {
-            Clinica clinica = new Clinica("teste");
-            Cliente cliente = new Cliente("1", "2", "3");
-            clinica.addCliente(cliente);
-            Assert.AreEqual("1", cliente.printCliente(), "wrong user");
-        }
-
         [TestMethod()]
-        public void printServicosTest()
+        public void addAnimalTest()
         {
-            Clinica clinica = new Clinica("teste");
-            Cliente cliente = new Cliente("1", "2", "3");
-            Servico servico = new Servico("1", "2", "3", "pills");
-            cliente.addServico(servico);
-            clinica.addCliente(cliente);
-            
-            Assert.AreEqual("pills", cliente.printServicos(), "wrong user");
+            Cliente jorge = new Cliente("Jorge", "8945466786", "rua do caneco");
+            Animal boby = new Animal("boby", "10", "f", "canino", "0");
+            jorge.addAnimal(boby);
+            Assert.AreEqual(boby, jorge.animals[0], "wrong data");
         }
-        */
     }
 }

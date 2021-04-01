@@ -16,9 +16,6 @@ namespace ClinicaVeterinaria
         {
             get { return m_servicos; }
         }
-
-       
-
         public Animal(string nome, string idade, string genero, string especie, string id)
         {
             this.Nome = nome;
@@ -30,6 +27,21 @@ namespace ClinicaVeterinaria
         public void addServico(Servico servico)
         {
             servicos.Add(servico);
+        }
+
+        public string fullServicos()
+        {
+            string data = "";
+            foreach (Servico s in servicos)
+            {
+                data = data + " " + s.fullData();
+            }
+            return data;
+        }
+
+        public string fullData()
+        {
+            return Nome + " " + Idade +" " + Genero +" " + Especie +" " + Id;
         }
 
     }

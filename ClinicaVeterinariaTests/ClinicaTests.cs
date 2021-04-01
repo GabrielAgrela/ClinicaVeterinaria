@@ -10,18 +10,18 @@ namespace ClinicaVeterinaria.Tests
     public class ClinicaTests
     {
         [TestMethod()]
-        public void relatorioTest()
+        public void produzirRelatorioTest()
         {
             Clinica clinica = new Clinica("Clinica do geremias");
 
-            Cliente jorge = new Cliente( "jorge","123","rua do carmo");
+            Cliente jorge = new Cliente("jorge", "123", "rua do carmo");
             Cliente luis = new Cliente("luis", "234", "rua do cosco");
             Cliente gertrudes = new Cliente("gertrudes", "345", "rua do bife");
 
             Profissional drArroz = new Profissional("dr Arroz", "10-19");
             Profissional drAntonieta = new Profissional("dr Antonia", "8-19");
 
-            Animal teiomoso = new Animal("teiomoso", "17","M","marsupial","2");
+            Animal teiomoso = new Animal("teiomoso", "17", "M", "marsupial", "2");
             Animal scooby = new Animal("scooby", "17", "M", "marsupial", "2");
             Animal geremias = new Animal("geremias", "17", "M", "marsupial", "2");
             Animal bolas = new Animal("bolas", "17", "M", "marsupial", "2");
@@ -36,7 +36,7 @@ namespace ClinicaVeterinaria.Tests
             clinica.addProfissional(drArroz);
             clinica.addProfissional(drAntonieta);
 
-            Servico servico1 = new Servico("10€","2 dias","mebocaina","dores de garganta1", drArroz);
+            Servico servico1 = new Servico("10€", "2 dias", "mebocaina", "dores de garganta1", drArroz);
             Servico servico2 = new Servico("20€", "3 dias", "leite", "dores de garganta2", drArroz);
             Servico servico3 = new Servico("230€", "30 dias", "anti-inflamatorios", "dores de garganta3", drAntonieta);
             Servico servico4 = new Servico("140€", "10 dias", "mebocaina", "dores de garganta4", drAntonieta);
@@ -71,6 +71,24 @@ namespace ClinicaVeterinaria.Tests
             gertrudes.addAnimal(MarcusAurelius);
 
             Assert.AreEqual("jorge", clinica.produzirRelatorio(jorge), "wrong user");
+        }
+
+        [TestMethod()]
+        public void addProfissionalTest()
+        {
+            Clinica clinica = new Clinica("st maria");
+            Profissional drGervasio = new Profissional("gervasio", "10as16");
+            clinica.addProfissional(drGervasio);
+            Assert.AreEqual(drGervasio, clinica.profissionais[0], "wrong datas");
+        }
+
+        [TestMethod()]
+        public void addClienteTest()
+        {
+            Clinica clinica = new Clinica("st maria");
+            Cliente jorge = new Cliente("Jorge", "8945466786", "rua do caneco");
+            clinica.addCliente(jorge);
+            Assert.AreEqual(jorge, clinica.clientes[0], "wrong datas");
         }
     }
 }

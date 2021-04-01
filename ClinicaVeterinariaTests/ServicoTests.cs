@@ -9,25 +9,12 @@ namespace ClinicaVeterinaria.Tests
     [TestClass()]
     public class ServicoTests
     {
-        /*[TestMethod()]
-        public void printServicoTest()
+        [TestMethod()]
+        public void fullDataTest()
         {
-            Servico servico = new Servico("1", "2", "3","pills");
-            Assert.AreEqual("pills", servico.printServico(), "wrong user");
-        }*/
-
-        /*[TestMethod()]
-        public void printProfissionalTest()
-        {
-            Clinica clinica = new Clinica("teste");
-            Profissional profissional = new Profissional(clinica,"jorge", "2as10");
-            Servico servico = new Servico(profissional,"1", "2", "3", "pills");
-
-            profissional.addServico(servico);
-            clinica.addProfissional(profissional);
-
-            Assert.AreEqual("jorge", clinica.searchProfissional(o), "wrong user");
-        }*/
-
+            Profissional drGervasio = new Profissional("Gervasio", "10as20");
+            Servico servico1 = new Servico("tratamento x", "2 dias", "antibioticos", "10€", drGervasio);
+            Assert.AreEqual("tratamento x" + " " + "2 dias" + " " + "antibioticos" + " " + "10€" + " " + drGervasio.Nome, servico1.fullData(), "wrong data");
+        }
     }
 }
