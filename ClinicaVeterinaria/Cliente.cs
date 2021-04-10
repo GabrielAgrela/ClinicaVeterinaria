@@ -9,7 +9,7 @@ namespace ClinicaVeterinaria
         public string Contato { get; set; }
         public string Endereco { get; set; }
 
-        public List<Animal> m_animals = new List<Animal>();
+        private List<Animal> m_animals = new List<Animal>();
         public List<Animal> animals
         {
             get { return m_animals; }

@@ -6,17 +6,18 @@ namespace ClinicaVeterinaria
     public class Animal
     {
         public string Nome { get; set; }
-        public string Idade { get; set; }
+        public int Idade { get; set; }
         public string Genero { get; set; }
         public string Especie { get; set; }
         public string Id { get; set; }
 
-        public List<Servico> m_servicos = new List<Servico>();
+        private List<Servico> m_servicos = new List<Servico>();
         public List<Servico> servicos
         {
             get { return m_servicos; }
         }
-        public Animal(string nome, string idade, string genero, string especie, string id)
+
+        public Animal(string nome, int idade, string genero, string especie, string id)
         {
             this.Nome = nome;
             this.Idade = idade;
@@ -28,22 +29,6 @@ namespace ClinicaVeterinaria
         {
             servicos.Add(servico);
         }
-
-        public string fullServicos()
-        {
-            string data = "";
-            foreach (Servico s in servicos)
-            {
-                data = data + " " + s.fullData();
-            }
-            return data;
-        }
-
-        public string fullData()
-        {
-            return Nome + " " + Idade +" " + Genero +" " + Especie +" " + Id;
-        }
-
     }
 
 }

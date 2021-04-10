@@ -8,7 +8,7 @@ namespace ClinicaVeterinaria
         public string Nome { get; set; }
         public string Disponibilidade { get; set; }
 
-        public List<Servico> m_servicos = new List<Servico>();
+        private List<Servico> m_servicos = new List<Servico>();
         public List<Servico> servicos
         {
             get { return m_servicos; }
@@ -23,16 +23,6 @@ namespace ClinicaVeterinaria
         public void addServico(Servico servico)
         {
             servicos.Add(servico);
-        }
-
-        public string fullServicos()
-        {
-            string data = "";
-            foreach (Servico s in servicos)
-            {
-                data = data + " " +s.fullData();
-            }
-            return data;
         }
     }
 }

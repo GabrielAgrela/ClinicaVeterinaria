@@ -14,20 +14,20 @@ namespace ClinicaVeterinaria.Tests
         {
             Clinica clinica = new Clinica("Clinica do geremias");
 
-            Cliente jorge = new Cliente("jorge", "123", "rua do carmo");
-            Cliente luis = new Cliente("luis", "234", "rua do cosco");
-            Cliente gertrudes = new Cliente("gertrudes", "345", "rua do bife");
+            Cliente jorge = new Cliente("jorge", "92", "rua do carmo");
+            Cliente luis = new Cliente("luis", "9009", "rua do cosco");
+            Cliente gertrudes = new Cliente("gertrudes", "39596", "rua do bife");
 
             Profissional drArroz = new Profissional("dr Arroz", "10-19");
             Profissional drAntonieta = new Profissional("dr Antonia", "8-19");
 
-            Animal teiomoso = new Animal("teiomoso", "17", "M", "marsupial", "2");
-            Animal scooby = new Animal("scooby", "17", "M", "marsupial", "2");
-            Animal geremias = new Animal("geremias", "17", "M", "marsupial", "2");
-            Animal bolas = new Animal("bolas", "17", "M", "marsupial", "2");
-            Animal toby = new Animal("toby", "17", "M", "marsupial", "2");
-            Animal kobe = new Animal("kobe", "17", "M", "marsupial", "2");
-            Animal MarcusAurelius = new Animal("MarcusAurelius", "17", "M", "marsupial", "2");
+            Animal teiomoso = new Animal("teiomoso", 17, "M", "marsupial", "2");
+            Animal scooby = new Animal("scooby", 17, "M", "marsupial", "2");
+            Animal geremias = new Animal("geremias", 17, "M", "marsupial", "2");
+            Animal bolas = new Animal("bolas", 17, "M", "marsupial", "2");
+            Animal toby = new Animal("toby", 17, "M", "marsupial", "2");
+            Animal kobe = new Animal("kobe", 17, "M", "marsupial", "2");
+            Animal MarcusAurelius = new Animal("MarcusAurelius", 17, "M", "marsupial", "2");
 
             clinica.addCliente(jorge);
             clinica.addCliente(luis);
@@ -36,18 +36,19 @@ namespace ClinicaVeterinaria.Tests
             clinica.addProfissional(drArroz);
             clinica.addProfissional(drAntonieta);
 
-            Servico servico1 = new Servico("10€", "2 dias", "mebocaina", "dores de garganta1", drArroz);
-            Servico servico2 = new Servico("20€", "3 dias", "leite", "dores de garganta2", drArroz);
-            Servico servico3 = new Servico("230€", "30 dias", "anti-inflamatorios", "dores de garganta3", drAntonieta);
-            Servico servico4 = new Servico("140€", "10 dias", "mebocaina", "dores de garganta4", drAntonieta);
-            Servico servico5 = new Servico("120€", "23 dias", "mebocain3a", "dores de garganta5", drAntonieta);
-            Servico servico6 = new Servico("150€", "33 dias", "mebocaina", "dores de garganta5", drArroz);
-            Servico servico7 = new Servico("110€", "43 dias", "mebocaina2", "dores de garganta6", drArroz);
-            Servico servico8 = new Servico("10€", "23 dias", "mebocaina", "dores de garganta4", drArroz);
-            Servico servico9 = new Servico("410€", "13 dias", "meboc5aina", "dores de garganta7", drAntonieta);
-            Servico servico10 = new Servico("510€", "3 dias", "mebocaina", "dores de garganta8", drArroz);
-            Servico servico11 = new Servico("101€", "32 dias", "mebocareina", "dores de garganta9", drAntonieta);
-            Servico servico12 = new Servico("103€", "31 dias", "mebocaina", "dores de garganta4", drArroz);
+            Servico servico1 = new Servico("nome1",21,"meds1",121,drArroz);
+            Servico servico2 = new Servico("nome2", 22, "meds2", 122, drArroz);
+            Servico servico3 = new Servico("nome3", 23, "meds3", 123, drAntonieta);
+            Servico servico4 = new Servico("nome4", 24, "meds4", 124, drAntonieta);
+            Servico servico5 = new Servico("nome5", 25, "meds5", 125, drAntonieta);
+            Servico servico6 = new Servico("nome6", 26, "meds6", 126, drArroz);
+            Servico servico7 = new Servico("nome7", 27, "meds7", 127, drArroz);
+            Servico servico8 = new Servico("nome8", 28, "meds8", 128, drArroz);
+            Servico servico9 = new Servico("nome9", 29, "meds9", 129, drAntonieta);
+            Servico servico10 = new Servico("nome10", 210, "meds10", 1210, drArroz);
+            Servico servico11 = new Servico("nome11", 211, "meds11", 1211, drAntonieta);
+            Servico servico12 = new Servico("nome12", 212, "meds12", 1212, drArroz);
+
 
             teiomoso.addServico(servico1);
             scooby.addServico(servico2);
@@ -70,7 +71,7 @@ namespace ClinicaVeterinaria.Tests
             gertrudes.addAnimal(kobe);
             gertrudes.addAnimal(MarcusAurelius);
 
-            Assert.AreEqual("jorge", clinica.produzirRelatorio(jorge), "wrong user");
+            Assert.AreEqual("jorge", clinica.produzirRelatorio(jorge.Nome), "wrong user");
         }
 
         [TestMethod()]

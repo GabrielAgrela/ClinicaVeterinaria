@@ -21,6 +21,8 @@ namespace ClinicaVeterinaria
     {
         static void Main(string[] args)
         {
+            Clinica clinica = new Clinica("st maria");
+            clinica.printMenu();
             /*Animal animal = new Animal();
             animal.registarAnimal(animal);
             animal.printAnimal();*/

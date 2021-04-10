@@ -6,12 +6,13 @@ namespace ClinicaVeterinaria
     public class Servico
     {
         public string Nome { get; set; }
-        public string Duracao { get; set; }
+        public int Duracao { get; set; }
         public string Medicamentos{ get; set; }
-        public string Preco { get; set; }
+        public int Preco { get; set; }
         public Profissional m_profissional{ get; set; }
 
-        public Servico(string nome, string duracao, string medicamentos, string preco, Profissional profissional)
+        //constructor de um servico para uma instancia de Animal
+        public Servico(string nome, int duracao, string medicamentos, int preco, Profissional profissional)
         {
             this.Nome = nome;
             this.Duracao = duracao;
@@ -20,9 +21,18 @@ namespace ClinicaVeterinaria
             this.m_profissional = profissional;
         }
 
+        //constructor de um servico para uma instancia de Profissional
+        public Servico(string nome, int duracao, string medicamentos, int preco)
+        {
+            this.Nome = nome;
+            this.Duracao = duracao;
+            this.Medicamentos = medicamentos;
+            this.Preco = preco;
+        }
+
         public string fullData()
         {
-            return Nome+" "+Duracao + " " +Medicamentos + " " +Preco + " " +m_profissional.Nome;
+            return "| Nome do servico: "+ Nome+ " | Duração em minutos: " + Duracao + " | Medicamentos: " + Medicamentos + " | Preco em euros: " + Preco + " | Profissional: " + m_profissional.Nome + " | Disponibilidade: " + m_profissional.Disponibilidade;
         }
     }
 }

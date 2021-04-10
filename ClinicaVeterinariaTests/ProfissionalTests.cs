@@ -14,7 +14,7 @@ namespace ClinicaVeterinaria.Tests
         public void addServicoTest()
         {
             Profissional drGervasio = new Profissional("gervasio", "10as16");
-            Servico servico1 = new Servico("tratamento x", "2 dias", "antibioticos", "10€", drGervasio);
+            Servico servico1 = new Servico("tratamento x", 2, "antibioticos", 10, drGervasio);
             drGervasio.addServico(servico1);
             Assert.AreEqual(servico1, drGervasio.servicos[0], "wrong datas");
         }
