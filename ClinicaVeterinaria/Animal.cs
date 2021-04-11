@@ -70,10 +70,6 @@ namespace ClinicaVeterinaria
             Console.WriteLine("horario do profissional do servico (hh:mm-hh:mm): ");
             string disponibilidade = Console.ReadLine();
 
-
-
-
-
             //Ao criar uma instancia servico, atribuimos uma instancia da disponibilidade de um profissional ao mesmo
             Profissional dr = new Profissional(nomeProfissional, disponibilidade);
             Servico servicoTemp = new Servico(nome, duracao, medicamentos, preco, dr);
