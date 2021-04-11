@@ -14,20 +14,20 @@ namespace ClinicaVeterinaria
         //constructor de um servico para uma instancia de Animal
         public Servico(string nome, int duracao, string medicamentos, int preco, Profissional profissional)
         {
-            this.Nome = nome;
-            this.Duracao = duracao;
-            this.Medicamentos = medicamentos;
-            this.Preco = preco;
-            this.m_profissional = profissional;
+            Nome = nome;
+            Duracao = duracao;
+            Medicamentos = medicamentos;
+            Preco = preco;
+            m_profissional = profissional;
         }
 
         //constructor de um servico para uma instancia de Profissional
         public Servico(string nome, int duracao, string medicamentos, int preco)
         {
-            this.Nome = nome;
-            this.Duracao = duracao;
-            this.Medicamentos = medicamentos;
-            this.Preco = preco;
+            Nome = nome;
+            Duracao = duracao;
+            Medicamentos = medicamentos;
+            Preco = preco;
         }
 
         public string fullData()

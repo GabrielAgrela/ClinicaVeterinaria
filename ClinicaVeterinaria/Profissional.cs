@@ -16,8 +16,8 @@ namespace ClinicaVeterinaria
 
         public Profissional(string nome, string disponibilidade)
         {
-            this.Nome = nome;
-            this.Disponibilidade = disponibilidade;
+            Nome = nome;
+            Disponibilidade = disponibilidade;
         }
 
         public void addServico(Servico servico)
