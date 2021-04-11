@@ -13,10 +13,10 @@ namespace ClinicaVeterinaria.Tests
         [TestMethod()]
         public void addServicoTest()
         {
-            Profissional drGervasio = new Profissional("gervasio", "10as16");
-            Servico servico1 = new Servico("tratamento x", 2, "antibioticos", 10, drGervasio);
-            drGervasio.addServico(servico1);
-            Assert.AreEqual(servico1, drGervasio.servicos[0], "wrong datas");
+            Profissional drGervasio = new Profissional("gervasio", "10-16");
+            Servico servico = new Servico("tratamento x", 2, "antibioticos", 10, drGervasio);
+            drGervasio.addServico(servico);
+            Assert.AreEqual(servico, drGervasio.servicos[0], "unexpected servico");
         }
     }
 }

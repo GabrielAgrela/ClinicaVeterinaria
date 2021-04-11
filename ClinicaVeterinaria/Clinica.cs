@@ -69,6 +69,7 @@ namespace ClinicaVeterinaria
         public string produzirRelatorio(String nomeCliente)
         {
             string relatorio = "";
+            int frequencia = 0;
             foreach (Cliente c in clientes)
             {
                 if(c.Nome == nomeCliente)
@@ -80,11 +81,12 @@ namespace ClinicaVeterinaria
                         foreach (Servico s in a.servicos)
                         {
                             relatorio = relatorio + "\n       Servico: " + s.fullData() + " ";
+                            frequencia++;
                         }
                     }
                 }
             }
-            return relatorio+"\n";
+            return relatorio+"\n"+" Frequencia: "+frequencia+"\n";
         }
 
         public void printMenu()

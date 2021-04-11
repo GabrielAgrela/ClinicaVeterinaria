@@ -34,7 +34,7 @@ namespace ClinicaVeterinaria
             string nome = Console.ReadLine();
 
             Console.WriteLine("idade do animal: ");
-            int idade = 0;
+            int idade;
             try
             {
                 idade = Int32.Parse(Console.ReadLine());

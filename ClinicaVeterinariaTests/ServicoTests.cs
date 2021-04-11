@@ -14,7 +14,7 @@ namespace ClinicaVeterinaria.Tests
         {
             Profissional drGervasio = new Profissional("Gervasio", "10as20");
             Servico servico1 = new Servico("tratamento x", 2, "antibioticos", 10, drGervasio);
-            Assert.AreEqual("tratamento x" + " " + "2 dias" + " " + "antibioticos" + " " + "10€" + " " + drGervasio.Nome, servico1.fullData(), "wrong data");
+            Assert.AreEqual("tratamento x" + " " + "2 dias" + " " + "antibioticos" + " " + "10€" + " " + drGervasio.Nome, servico1.fullData(), "fullData output unexpected");
         }
     }
 }
